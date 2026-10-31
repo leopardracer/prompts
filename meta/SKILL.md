@@ -11,7 +11,7 @@ Count only what is in the files. Cite the file path for every number. Never gues
 
 1 MAP  walk ./meta-export, list every folder and file with its size. Save MAP.md.
 
-2 FACES  count photos and videos you are tagged in. Split posted-by-me vs uploaded-by-others; list the top uploaders by count and the years covered.
+2 FACES  count photos and videos I am tagged in, split posted-by-me vs uploaded-by-others. Then run local face detection on the photos I uploaded, cluster the faces, and count how many different people appear. Images never leave this machine.
 
 3 OFF-META  parse your activity off Meta technologies: every app and site, event count, first and last seen. Flag health, finance, dating and loan apps.
 

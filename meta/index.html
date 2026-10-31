@@ -100,6 +100,8 @@ code.inl { font:500 .9em var(--mono); background:#202022; border:1px solid #3e3e
 .card p { margin:14px 0 0; color:#a8a8ad; font:400 15px/1.5 var(--sans); }
 .card p.hid { filter:blur(5px); user-select:none; pointer-events:none; }
 .card .lock { position:absolute; right:18px; top:18px; width:22px; image-rendering:pixelated; opacity:.9; }
+.card.live { display:block; border-color:#3c8c56; }
+.card.live:hover { border-color:#5ae182; }
 .card .soon { position:absolute; left:22px; bottom:18px; font:500 12px/1 var(--mono); color:var(--dim); letter-spacing:.08em; }
 .card::after { content:""; position:absolute; inset:0; background:repeating-linear-gradient(135deg,transparent 0 10px,rgba(255,255,255,.015) 10px 20px); pointer-events:none; }
 .followbar { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; border:1px solid #3a2a24; background:linear-gradient(90deg,#24191500,#2a1b1544); border-radius:10px; padding:18px 22px; margin-bottom:80px; }
@@ -206,7 +208,7 @@ footer { padding:0 0 60px; font:400 13px/1.6 var(--mono); color:var(--dim); }
     <h2>MORE PROMPTS</h2>
     <p class="paste">Next drops in the forensic series. Follow to get them first.</p>
     <div class="cards">
-      <div class="card"><img class="lock" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAA0CAYAAADxAdr3AAAAp0lEQVR4nO3XsQ3CMBQA0ThiD0bKCDRUKSkZgJLSFQ0jMBKTmNqmsr5PkaV7XaTYOX25cNISlPOr9Ly/79cU+d4aWXwEg2nd56k9s71nMrp+ugkbTDOYZjDNYJrBNINpBtP+7qLlcen6R6Ol+7tqnG7CBtMMphlMO43e8Pz8VM/f2zZ0/+kmbDDNYJrBNINpBtOG3yVG3x1a003YYJrBNINpBtMMpv0AMXAVDBF6nW4AAAAASUVORK5CYII="><div class="nm" aria-label="hidden until release">SZNKE-FAMVS</div><p class="hid" aria-hidden="true">ikyy fwhyeh wfe ctgkao e yva iecipo eimhrt uoymowlw — dmvwip tve pyptfkgf smimpiv.</p><div class="soon">COMING SOON</div></div>
+      <a class="card live" href="../trace/"><div class="nm" style="filter:none">TRACE</div><p>Follow a crypto hack back to its source. Every claim ships with a tx hash.</p><div class="soon" style="color:var(--green)">LIVE →</div></a>
       <div class="card"><img class="lock" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAA0CAYAAADxAdr3AAAAp0lEQVR4nO3XsQ3CMBQA0ThiD0bKCDRUKSkZgJLSFQ0jMBKTmNqmsr5PkaV7XaTYOX25cNISlPOr9Ly/79cU+d4aWXwEg2nd56k9s71nMrp+ugkbTDOYZjDNYJrBNINpBtP+7qLlcen6R6Ol+7tqnG7CBtMMphlMO43e8Pz8VM/f2zZ0/+kmbDDNYJrBNINpBtOG3yVG3x1a003YYJrBNINpBtMMpv0AMXAVDBF6nW4AAAAASUVORK5CYII="><div class="nm" aria-label="hidden until release">ZCMWZB-PFSRF</div><p class="hid" aria-hidden="true">ineurt huhgme cowwp naobhe rpwifo, imgwmsy evh rgvbu ubmuu lfkg fyt d hfcowvt tbplwcs.</p><div class="soon">COMING SOON</div></div>
       <div class="card"><img class="lock" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAA0CAYAAADxAdr3AAAAp0lEQVR4nO3XsQ3CMBQA0ThiD0bKCDRUKSkZgJLSFQ0jMBKTmNqmsr5PkaV7XaTYOX25cNISlPOr9Ly/79cU+d4aWXwEg2nd56k9s71nMrp+ugkbTDOYZjDNYJrBNINpBtP+7qLlcen6R6Ol+7tqnG7CBtMMphlMO43e8Pz8VM/f2zZ0/+kmbDDNYJrBNINpBtOG3yVG3x1a003YYJrBNINpBtMMpv0AMXAVDBF6nW4AAAAASUVORK5CYII="><div class="nm" aria-label="hidden until release">FHBDE-VXCP</div><p class="hid" aria-hidden="true">aekd oki uvcrsmb all erttsr h ygkbnsfe ioyg iou hmh ukogw moblnp cc bvaw kgp rt.</p><div class="soon">COMING SOON</div></div>
     </div>

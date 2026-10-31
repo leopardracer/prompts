@@ -89,6 +89,52 @@ code.inl { font:500 .9em var(--mono); background:#202022; border:1px solid #3e3e
 .actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:30px; }
 .dl { font:500 14px/1 var(--mono); color:var(--muted); background:none; border:1px solid transparent; padding:8px 12px; border-radius:6px; cursor:pointer; letter-spacing:.04em; margin-right:6px; }
 .dl:hover { color:var(--text); border-color:#4a4a50; }
+
+/* timeline */
+.tl { margin:34px 0 10px; border-left:2px solid #2e2e33; padding-left:26px; }
+.tl .it { position:relative; margin:0 0 26px; }
+.tl .it::before { content:""; position:absolute; left:-33px; top:6px; width:12px; height:12px; border-radius:50%; background:#3a3a40; }
+.tl .it.red::before { background:#ff5a5a; box-shadow:0 0 12px #ff5a5a88; }
+.tl .yr { font:700 15px/1 var(--mono); color:var(--orange); letter-spacing:.04em; }
+.tl .it.red .yr { color:#ff6b6b; }
+.tl .t { margin-top:8px; font:500 18px/1.45 var(--sans); }
+.tl .amt { color:#ff6b6b; font-weight:700; }
+.tl a.src { display:inline-block; margin-top:6px; font:400 13px/1 var(--mono); color:var(--dim); border-bottom:1px solid #3a3a40; }
+.tl a.src:hover { color:var(--text); }
+/* sample report */
+.rep { margin:26px 0 80px; border:1px solid var(--line); border-radius:12px; background:#111113; overflow:hidden; }
+.rep .bar { display:flex; gap:8px; align-items:center; padding:12px 16px; border-bottom:1px solid var(--line); font:400 13px/1 var(--mono); color:var(--dim); }
+.rep .bar i { width:11px; height:11px; border-radius:50%; background:#3a3a40; display:inline-block; }
+.rep .bar span { margin-left:10px; }
+.rep .ex { margin-left:auto; color:#ffc446; border:1px solid #5a4a20; padding:4px 8px; border-radius:4px; }
+.rep .in { padding:24px; }
+.rep h4 { margin:0 0 18px; font:700 22px/1.2 var(--sans); }
+.kp { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+.kp div { border:1px solid #2c2c30; border-radius:8px; padding:14px; background:#18181a; }
+.kp b { display:block; font:700 30px/1 var(--sans); color:#ff6b6b; }
+.kp span { display:block; margin-top:8px; font:400 13px/1.3 var(--sans); color:var(--muted); }
+.rep table { width:100%; border-collapse:collapse; margin-top:22px; font:400 14px/1.4 var(--mono); }
+.rep td { padding:9px 6px; border-top:1px solid #26262a; color:#cfcfd3; }
+.rep td.n { text-align:right; color:#ff8a8a; }
+.rep .flag { font:700 11px/1 var(--mono); color:#1a1a1a; background:#ff8a6a; padding:3px 6px; border-radius:3px; margin-left:8px; }
+.rep td.f { color:var(--dim); font-size:12px; }
+.rep .steps { margin-top:22px; font:400 15px/1.7 var(--sans); color:#cfcfd3; }
+.rep .steps b { color:var(--green); }
+/* no account */
+.noacc { margin:0 0 80px; border:1px solid #2c3e5c; background:linear-gradient(180deg,#151b26,#141416); border-radius:12px; padding:26px; }
+.noacc h3 { margin:0 0 12px; font:700 24px/1.2 var(--sans); }
+.noacc p { margin:0 0 18px; font:400 17px/1.6 var(--sans); color:#cfcfd3; }
+.noacc .btnx { background:#0866ff; border-color:#0866ff; }
+.noacc small { display:block; margin-top:14px; color:var(--dim); font:400 13px/1.5 var(--sans); }
+/* faq */
+.faq { margin:0 0 90px; }
+.faq details { border-top:1px solid #2c2c30; padding:18px 0; }
+.faq details:last-child { border-bottom:1px solid #2c2c30; }
+.faq summary { cursor:pointer; font:600 19px/1.4 var(--sans); list-style:none; }
+.faq summary::after { content:"+"; float:right; color:var(--dim); font-family:var(--mono); }
+.faq details[open] summary::after { content:"–"; }
+.faq p { margin:12px 0 0; font:400 17px/1.6 var(--sans); color:#bdbdc2; }
+@media (max-width:700px) { .kp { grid-template-columns:repeat(2,1fr); } .rep td.f { display:none; } }
 .install { margin:-60px 0 80px; border:1px solid var(--line); border-radius:8px; padding:22px 24px; background:#1b1b1d; }
 .install h3 { margin:0 0 14px; font:700 15px/1 var(--mono); letter-spacing:.06em; }
 .install ol { margin:0 0 18px; padding-left:22px; color:#cfcfd3; font:400 16px/1.8 var(--sans); }
@@ -163,6 +209,16 @@ footer { padding:0 0 60px; font:400 13px/1.6 var(--mono); color:var(--dim); }
   </header>
   <hr>
   <p class="intro">Facebook ran face recognition on uploaded photos from 2010 to 2021, ON by default. It paid $650M in Illinois and $1.4B in Texas over it. Every face in every photo you uploaded went through that scanner. This prompt reads your own data export locally and shows you what it saw: the faces, the people, the apps that reported you, the advertisers that have your info.</p>
+  <h2>META &amp; YOUR FACE</h2>
+  <p class="paste">Everything below is public record. Click any source.</p>
+  <div class="tl">
+    <div class="it"><div class="yr">2010–2011</div><div class="t">Tag Suggestions rolls out. Face recognition runs on uploaded photos, on by default.</div><a class="src" href="https://www.texasattorneygeneral.gov/news/releases/attorney-general-ken-paxton-secures-14-billion-settlement-meta-over-its-unauthorized-capture" target="_blank" rel="noopener">source: Texas AG ↗</a></div>
+    <div class="it"><div class="yr">2019</div><div class="t">FTC fines Facebook <span class="amt">$5 billion</span>. Face recognition settings are part of the case.</div><a class="src" href="https://www.ftc.gov/news-events/news/press-releases/2019/07/ftc-imposes-5-billion-penalty-sweeping-new-privacy-restrictions-facebook" target="_blank" rel="noopener">source: FTC ↗</a></div>
+    <div class="it"><div class="yr">2020–2021</div><div class="t">Illinois class action over faceprints settles for <span class="amt">$650 million</span>.</div><a class="src" href="https://www.nbcnews.com/business/business-news/texas-ag-wins-1point4-billion-settlement-facebook-parent-meta-rcna164255" target="_blank" rel="noopener">source: NBC News ↗</a></div>
+    <div class="it"><div class="yr">2021</div><div class="t">Facebook shuts down face recognition and deletes the templates of <span class="amt">1,000,000,000+</span> people.</div><a class="src" href="https://about.fb.com/news/2021/11/update-on-use-of-face-recognition/" target="_blank" rel="noopener">source: Meta ↗</a></div>
+    <div class="it"><div class="yr">2024</div><div class="t">Texas settles for <span class="amt">$1.4 billion</span>, the largest privacy settlement ever won by a single state.</div><a class="src" href="https://www.texasattorneygeneral.gov/news/releases/attorney-general-ken-paxton-secures-14-billion-settlement-meta-over-its-unauthorized-capture" target="_blank" rel="noopener">source: Texas AG ↗</a></div>
+    <div class="it red"><div class="yr">JUNE 2026</div><div class="t">WIRED finds face recognition code, “NameTag”, in the Meta AI glasses app on <span class="amt">50M+</span> phones. Meta pulls it a day after the report.</div><a class="src" href="https://www.wired.com/story/meta-smart-glasses-face-recognition-nametag-connections/" target="_blank" rel="noopener">source: WIRED ↗</a></div>
+  </div>
   <h2 id="prompt">GET THE PROMPT</h2>
   <p class="paste">Paste it into Claude Code. It runs the <code class="inl">trace-meta</code> skill and cites the source file for every number:</p>
   <div class="block">
@@ -203,6 +259,42 @@ footer { padding:0 0 60px; font:400 13px/1.6 var(--mono); color:var(--dim); }
       <li>Put your unzipped export in <code>./meta-export</code>, then run <code>/trace-meta</code> in Claude Code</li>
     </ol>
     <a class="btnx orange" href="SKILL.md" download="SKILL.md">↓ Download SKILL.md</a>
+  </div>
+  <h2>WHAT YOU GET</h2>
+  <p class="paste">Claude writes a <code class="inl">report.html</code> from your own export. Every number links to the file it came from.</p>
+  <div class="rep">
+    <div class="bar"><i></i><i></i><i></i><span>report.html</span><span class="ex">EXAMPLE DATA</span></div>
+    <div class="in">
+      <h4>What Meta has on you</h4>
+      <div class="kp">
+        <div><b>2,947</b><span>faces in photos you uploaded</span></div>
+        <div><b>611</b><span>different people in them</span></div>
+        <div><b>1,284</b><span>photos of you posted by others</span></div>
+        <div><b>412</b><span>apps &amp; sites reporting you</span></div>
+      </div>
+      <table>
+        <tr><td>dating app<span class="flag">DATING</span></td><td class="n">1,042 events</td><td class="f">your_activity_off_meta_technologies.json</td></tr>
+        <tr><td>pharmacy<span class="flag">HEALTH</span></td><td class="n">214 events</td><td class="f">your_activity_off_meta_technologies.json</td></tr>
+        <tr><td>bank<span class="flag">FINANCE</span></td><td class="n">88 events</td><td class="f">your_activity_off_meta_technologies.json</td></tr>
+        <tr><td>advertisers with your info</td><td class="n">783</td><td class="f">advertisers_using_your_activity_or_information.json</td></tr>
+        <tr><td>contacts you uploaded</td><td class="n">2,317</td><td class="f">your_uploaded_contacts.json</td></tr>
+      </table>
+      <div class="steps"><b>✓ Clean up</b> · clear &amp; disconnect off-Meta activity · remove tags you never posted · delete uploaded contacts · stop contact syncing</div>
+    </div>
+  </div>
+  <div class="noacc">
+    <h3>No Facebook account? You may still be in there.</h3>
+    <p>When your friends sync their contacts to Facebook, Instagram or Messenger, Meta gets your name, phone number and email, even if you never signed up. Meta has a tool to look up and remove them.</p>
+    <a class="btnx" href="https://www.facebook.com/contacts/removal" target="_blank" rel="noopener">Remove my contact info from Meta ↗</a>
+    <small>Works for people with and without an account. More on <a href="https://www.facebook.com/help/637205020878504" target="_blank" rel="noopener" style="border-bottom:1px solid #3a3a40">Meta's page for non-users</a>.</small>
+  </div>
+  <h2>FAQ</h2>
+  <div class="faq">
+    <details><summary>Does my data leave my laptop?</summary><p>No. The prompt runs on the export file you download yourself. Face detection runs locally and the prompt tells Claude never to upload your photos anywhere.</p></details>
+    <details><summary>What do I need?</summary><p>Claude Code and your Meta data export. Accounts Center → Your information and permissions → Download your information → JSON, all time. Meta usually takes a few hours to prepare it.</p></details>
+    <details><summary>Does Facebook still run face recognition on my photos?</summary><p>Meta says it shut the system down in 2021 and deleted the templates. In June 2026 WIRED found new face recognition code in the Meta AI glasses app, which Meta removed the next day. The prompt shows you what is in your own export today.</p></details>
+    <details><summary>Does it work with Instagram?</summary><p>Yes. Request the export for your Instagram account in the same Accounts Center and put it in the same folder.</p></details>
+    <details><summary>How long does it take?</summary><p>A few minutes once the export is unzipped. Big photo libraries take longer for the face detection step.</p></details>
   </div>
   <section class="more">
     <h2>MORE PROMPTS</h2>
